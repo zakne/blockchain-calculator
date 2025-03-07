@@ -23,7 +23,6 @@ export class Server {
     }
 
     private setupStaticFiles() {
-        console.log(__dirname);
         this.app.use(express.static(path.join(__dirname, '../../frontend/dist')));
         this.app.get('*', this.handleFrontendRequest.bind(this));
     }
